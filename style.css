@@ -1,0 +1,139 @@
+:root {
+    --light-gray: #A9A9A9;
+    --dark-gray: #343434;
+    --orange: #FF9500;
+}
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.iphone-wrapper {
+    position: relative;
+    width: 310px;
+    height: 625px;
+    padding: 18px;
+    /* background-image: url('images/iphone-frame.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+.iphone-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/iphone-frame.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 10px 10px 50px;
+    background-color: black;
+}
+
+.result, .control {
+    position: relative;
+    z-index: 5;
+}
+
+.result {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 72px;
+    line-height: 1;
+    text-align: right;
+    padding-right: 8px;
+    font-weight: 200;
+    letter-spacing: -1px;
+}
+
+.control {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    /* grid-template-rows: repeat(5, 1fr); */
+}
+
+.control__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* align-self: center;
+    justify-self: center; */
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+    border: none;
+    cursor: pointer;
+}
+
+.control__btn--lightgray {
+    background-color: var(--light-gray);
+    color: black;
+    font-size: 20px;
+}
+
+.control__btn--lightgray:hover {
+    background-color: #d9d9d9;
+}
+
+.control__btn--darkgray {
+    background-color: var(--dark-gray);
+}
+
+.control__btn--darkgray:hover {
+    background-color: #737373;
+}
+
+.control__btn--orange {
+    background-color: var(--orange);
+}
+
+.control__btn--orange:hover {
+    background-color: #f3c995;
+}
+
+.control__btn--null {
+    grid-column: 1/3;
+    width: 100%;
+    border-radius: 30px;
+    justify-content: start;
+}
